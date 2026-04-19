@@ -3,7 +3,8 @@ nixPkgs = ["nodejs_18", "python311", "ffmpeg"]
 
 [phases.install]
 cmds = [
-  "python3 --version",
+  "ln -s $(which python3) /usr/bin/python || true",
+  "python --version",
   "npm install"
 ]
 
